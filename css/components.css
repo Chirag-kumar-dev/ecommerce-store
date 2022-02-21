@@ -1,0 +1,419 @@
+/* badge component starts here */
+
+.badge {
+  margin: 1rem;
+  width: max-content;
+}
+
+.badge_icon {
+  color: white;
+  padding: 1px 6px;
+  border-radius: 60%;
+  position: absolute;
+  font-size: 12px;
+}
+i.badge_icon {
+  padding: 7px 11px;
+}
+
+.badge_icon.pri {
+  background-color: rgba(var(--primary), 1);
+}
+
+.badge_icon.sec {
+  background-color: rgba(var(--secondary), 1);
+}
+
+.badge_icon.def {
+  background-color: rgba(var(--black), 1);
+}
+
+.t-left {
+  top: -1.1em;
+  left: -1.1em;
+}
+
+.t-right {
+  top: -1.1em;
+  right: -1.1em;
+}
+
+.b-left {
+  bottom: -1.1em;
+  left: -1.1em;
+}
+
+.b-right {
+  bottom: -1.1em;
+  right: -1.1em;
+}
+
+/* badge component ends here */
+
+/* slider component starts from here */
+.slider {
+  overflow: hidden;
+  max-width: 100vw;
+  display: grid;
+  grid-template-areas: "overflow";
+}
+
+.slider_slide {
+  grid-area: overflow;
+  display: flex;
+  width: max-content;
+  max-height: 95vh;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  transition: ease 500ms;
+}
+
+.slider_item {
+  width: 100%;
+}
+
+.slider_item img {
+  /* this is a temprory css it doesnt have any relation with the component itself */
+  object-fit: cover;
+  max-height: 100%;
+  width: 100vw;
+  object-position: center center;
+}
+
+.slider_buttons {
+  grid-area: overflow;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.slider_button1,
+.slider_button2 {
+  background-color: transparent;
+  color: white;
+  z-index: 2;
+  transition: ease 400ms;
+}
+
+.slider_button1:hover,
+.slider_button2:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.slider_dots {
+  grid-area: overflow;
+  display: none;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 10px;
+  max-width: 100vw;
+  z-index: 10;
+  margin-bottom: 1.2rem;
+}
+
+.slide_dot i {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.slider--dots .slider_dots {
+  display: flex;
+}
+
+.slider--dots .slider_buttons {
+  display: none;
+}
+
+/* slider component ends here */
+
+/* cards component starts here */
+
+.card {
+  justify-self: center;
+  align-self: flex-start;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+  background-color: white;
+  flex-direction: column;
+  width: 20rem;
+  display: flex;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.5);
+}
+
+button {
+  transition: none;
+}
+
+.card_imggradient {
+  height: 12rem;
+  width: 100%;
+}
+
+.card--gradient .card_imggradient {
+  display: inline-block;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 0.9) 40%
+  );
+}
+.card--gradient .card_imggradient_img {
+  opacity: 0.8;
+}
+
+.card .card_imggradient_img {
+  border-radius: 0.3rem 0.3rem 0rem 0rem;
+  width: 100%;
+  height: 12rem;
+  min-height: 100%;
+}
+
+.card_header {
+  padding: 0.5rem 1rem;
+  align-self: flex-start;
+  z-index: 10;
+}
+
+.card_header h3 {
+  font-size: 1.4rem;
+  margin: 0.3rem 0rem 0rem;
+}
+.card_header h4 {
+  font-size: 0.9rem;
+  color: gray;
+  font-weight: 500;
+}
+
+.card_content {
+  padding: 0.25rem 1rem;
+  font-size: 0.8rem;
+  color: gray;
+  font-weight: 400;
+}
+
+.card_btnBox {
+  padding: 0.5rem 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+}
+
+.card_btnBox_box1 {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card_btnBox_box1 > * {
+  color: blueviolet;
+  font-weight: 500;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+.card_btnBox_box2 {
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card_btnBox_box2 > * {
+  font-size: 1rem;
+  background-color: transparent;
+  color: gray;
+}
+
+.card .card_imggradient_img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.card--text-over {
+  display: grid;
+  grid-template-areas: "overflow" "content" "buttons";
+}
+
+.card--text-over .card_imggradient {
+  grid-area: overflow;
+  height: 12rem;
+  min-height: calc(100% + 1rem);
+}
+.card--text-over .card_header {
+  grid-area: overflow;
+  color: white;
+  align-self: flex-end;
+  margin-bottom: 1rem;
+}
+
+.card--text-over .card_header h4 {
+  color: white;
+}
+
+.card--text-over .card_content {
+  padding: 1rem 1rem 0.5rem;
+}
+
+.card--header {
+  display: grid;
+  grid-template-areas: "header" "img" "content" "buttons";
+}
+
+.card--header .card_header {
+  grid-area: header;
+}
+.card--header .card_imggradient {
+  border-radius: 0rem;
+  margin-right: 0.5rem 0rem;
+}
+
+.card--header .card_imggradient_img {
+  border-radius: 0rem;
+  height: 100%;
+}
+.card--header .card_content {
+  padding: 1rem 1rem 0.5rem;
+}
+
+.card--icons .card_btnBox_box1 {
+  display: none;
+}
+
+.card--buttons .card_btnBox_box2 {
+  display: none;
+}
+
+.card--horizontal {
+  display: grid;
+  grid-template-areas: "img header header" "button button button";
+}
+.card--horizontal .card_imggradient {
+  grid-area: img;
+  height: 8rem;
+}
+.card--horizontal .card_imggradient_img {
+  border-radius: 0.3rem 0rem 0rem;
+  object-fit: cover;
+  height: 100%;
+}
+
+.card--horizontal .card_header {
+  grid-area: header;
+  align-self: center;
+}
+.card--horizontal .card_content {
+  display: none;
+}
+
+.card--horizontal .card_btnBox {
+  grid-area: button;
+  padding: 1rem;
+}
+
+/* cards component ends here */
+
+/* catergory cards starts here */
+.catergory_card {
+  display: grid;
+  grid-template-areas: "img cont cont";
+  padding: 3rem 2.4rem;
+  margin: 2rem;
+  background-color: rgb(var(--gray-light));
+  border-radius: 10px;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+}
+
+.catergory_cardImg {
+  grid-area: img;
+  height: 10rem;
+}
+
+.catergory_cardImg img {
+  object-fit: cover;
+  height: 100%;
+  width: 15rem;
+}
+
+.catergory_cardContent {
+  height: 100%;
+  grid-area: cont;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .catergory_card {
+    margin: 0.5rem;
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .catergory_card {
+    text-align: justify;
+  }
+  .catergory_cardImg {
+    display: none;
+  }
+}
+/* catergory cards ends here */
+
+/* catergory list stars here */
+
+.catergory_list {
+  display: flex;
+  gap: 12px;
+}
+
+.catergory_listItem {
+  display: grid;
+  grid-template-areas: "overflow";
+  align-items: center;
+  text-align: center;
+}
+
+.catergory_listItem > * {
+  grid-area: overflow;
+  width: 100%;
+}
+
+.catergory_listItem img {
+  object-fit: cover;
+  width: 16rem;
+  height: 10rem;
+  object-position: center center;
+}
+
+.catergory_listItem h4 {
+  background-color: white;
+  padding: 5px;
+}
+
+@media (max-width: 768px) {
+  .catergory_list {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .catergory_listItem {
+    flex-basis: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .catergory_listItem {
+    flex-basis: 125px;
+  }
+}
+
+/* catergory list ends here */
